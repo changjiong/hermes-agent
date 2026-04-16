@@ -17,9 +17,6 @@ services:
       MESSAGING_CWD: /opt/data/workspace
       TERMINAL_CWD: /opt/data/workspace
       PATH: /opt/hermes/.venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-    labels:
-      - 'traefik.http.middlewares.rmek54yzxz3t847fvzplohc5-dashboard-auth.basicauth.users=hermes-admin:$apr1$2Jg7sdN1$y7Dg48a7KATOzD.Ps5.FK.'
-      - 'traefik.http.routers.https-0-rmek54yzxz3t847fvzplohc5-dashboard.middlewares=gzip,rmek54yzxz3t847fvzplohc5-dashboard-auth'
     expose:
       - "9119"
     volumes:
