@@ -1,0 +1,24 @@
+services:
+  dashboard:
+    build:
+      context: ../..
+      dockerfile: Dockerfile
+    command:
+      - dashboard
+      - --host
+      - 0.0.0.0
+      - --port
+      - "9119"
+      - --no-open
+      - --insecure
+    restart: unless-stopped
+    environment:
+      HERMES_HOME: /opt/data
+      MESSAGING_CWD: /opt/data/workspace
+      TERMINAL_CWD: /opt/data/workspace
+      PATH: /opt/hermes/.venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    expose:
+      - "9119"
+    volumes:
+      - /home/lsnn/.hermes:/opt/data
+      - /home/lsnn/logseq:/knowledge/logseq
