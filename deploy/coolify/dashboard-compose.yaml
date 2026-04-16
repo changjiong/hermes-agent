@@ -17,6 +17,8 @@ services:
       MESSAGING_CWD: /opt/data/workspace
       TERMINAL_CWD: /opt/data/workspace
       PATH: /opt/hermes/.venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    ports:
+      - "127.0.0.1:9119:9119"
     expose:
       - "9119"
     volumes:
