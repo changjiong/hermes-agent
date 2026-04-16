@@ -17,6 +17,8 @@ services:
       MESSAGING_CWD: /opt/data/workspace
       TERMINAL_CWD: /opt/data/workspace
       PATH: /opt/hermes/.venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    labels:
+      - "caddy_0.basicauth.hermes-admin=${DASHBOARD_BASIC_AUTH_HASH}"
     expose:
       - "9119"
     volumes:
