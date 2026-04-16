@@ -18,7 +18,8 @@ services:
       TERMINAL_CWD: /opt/data/workspace
       PATH: /opt/hermes/.venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
     labels:
-      - 'caddy_0.basicauth.hermes-admin=$$2a$$14$$r4woaWzQhZmaq3UJ.F2EhOEfFoq/Bcjd2.GIsEMMUL69HdsczUSte'
+      - 'traefik.http.middlewares.rmek54yzxz3t847fvzplohc5-dashboard-auth.basicauth.users=hermes-admin:$$apr1$$2Jg7sdN1$$y7Dg48a7KATOzD.Ps5.FK.'
+      - 'traefik.http.routers.https-0-rmek54yzxz3t847fvzplohc5-dashboard.middlewares=gzip,rmek54yzxz3t847fvzplohc5-dashboard-auth'
     expose:
       - "9119"
     volumes:
